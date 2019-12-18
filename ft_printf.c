@@ -6,19 +6,17 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:20:03 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/16 15:56:48 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 11:42:31 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_is_type(char type)
+int		ft_return(t_printf *args, va_list parameters, int res)
 {
-	if (type == 'c' || type == 's' || type == 'p' || type == 'd' ||
-			type == 'i' || type == 'u' || type == 'x' || type == 'X' ||
-			type == '%')
-		return (1);
-	return (0);
+	va_end(parameters);
+	free(args);
+	return (res);
 }
 
 void	ft_initialize(t_printf *args)
@@ -92,7 +90,5 @@ int		ft_printf(const char *format, ...)
 				break ;
 		}
 	}
-	va_end(parameters);
-	free(args);
-	return (res);
+	return (ft_return(args, parameters, res));
 }

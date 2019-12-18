@@ -6,11 +6,20 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 11:52:38 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/17 18:07:47 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 11:38:09 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_is_type(char type)
+{
+	if (type == 'c' || type == 's' || type == 'p' || type == 'd' ||
+			type == 'i' || type == 'u' || type == 'x' || type == 'X' ||
+			type == '%')
+		return (1);
+	return (0);
+}
 
 void	ft_flags(const char *format, int *i, t_printf *args)
 {

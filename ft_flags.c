@@ -6,7 +6,7 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 10:23:50 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/18 10:43:00 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 10:58:50 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_spaces(t_printf *args, char *str, int *res, int s_len)
 	int i;
 
 	i = 0;
-//	i = str[0] == '-' ? 1 : 0;
-	while (args->width > s_len && args->width > args->precision && args->precision != 0)
+	while (args->width > s_len && args->width > args->precision
+			&& args->precision != 0)
 	{
 		ft_putchar(' ', res);
 		args->width--;
@@ -59,7 +59,7 @@ void	ft_zero(t_printf *args, char *str, int *res, int s_len)
 			|| args->precision > s_len)
 	{
 		ft_putchar('0', res);
-		s_len++;	
+		s_len++;
 	}
 	if (!(args->precision == 0 && str[0] == '0'))
 		ft_putstr(str, res);

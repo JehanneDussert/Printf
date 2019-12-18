@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_diuxX_types.c                                   :+:      :+:    :+:   */
+/*   ft_diux_types.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 10:26:30 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/18 10:56:33 by jdussert         ###   ########.fr       */
+/*   Created: 2019/12/18 11:30:09 by jdussert          #+#    #+#             */
+/*   Updated: 2019/12/18 11:30:16 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_add_specification(t_printf *args, int *res, char *str)
 	s_len = 0;
 	while (str[s_len] != '\0')
 		s_len++;
-	if (args->flag == '0' && args->width - args->precision > s_len && args->precision != -1)
+	if (args->flag == '0' && args->width - args->precision > s_len
+			&& args->precision != -1)
 		args->flag = '+';
 	if ((args->precision > s_len && args->width == -1) ||
 			args->precision > args->width)

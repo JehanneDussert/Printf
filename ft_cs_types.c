@@ -6,7 +6,7 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 13:40:38 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/16 15:33:30 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 11:48:42 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_s_type(va_list parameters, t_printf *args, int *res)
 	if (!str)
 		str = "(null)";
 	while ((s_len < args->precision || args->precision == -1) && str[s_len])
-			s_len++;
+		s_len++;
 	if (args->flag == '-')
 		ft_s_minus(args, str, res, s_len);
 	else if (args->flag == '0')

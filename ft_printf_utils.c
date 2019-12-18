@@ -6,12 +6,11 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:28:16 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/16 15:09:49 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 11:24:29 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "../../libft/libft.h"
 
 int			ft_l_atoi(const char *str, int *i)
 {
