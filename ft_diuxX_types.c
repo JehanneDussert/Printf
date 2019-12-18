@@ -6,7 +6,7 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 10:26:30 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/17 19:48:18 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 10:17:45 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_zero_flag(t_printf *args, char *str, int *res, int s_len)
 		if (args->flag != '0')
 			ft_putstr(str, res);
 	}
-	else if (args->width > args->precision && args->width > 0)
+	else if (args->width > args->precision && args->width >= 0)
 	{
 		ft_spaces(args, str, res, s_len);
 		ft_zero(args, str, res, s_len);

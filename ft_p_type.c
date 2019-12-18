@@ -6,17 +6,14 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 13:48:37 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/17 19:29:35 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 10:23:29 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_p_specification(t_printf *args, int *res, char *str)
+void	ft_p_specification(t_printf *args, int *res, char *str, int s_len)
 {
-	int	s_len;
-
-	s_len = 12;
 	if (args->flag == '-')
 	{
 		ft_putstr("0x", res);
@@ -29,7 +26,7 @@ void	ft_p_specification(t_printf *args, int *res, char *str)
 	}
 	else
 	{
-		while (args->width > 14)
+		while (args->width > s_len + 2)
 		{
 			ft_putchar(' ', res);
 			args->width--;
@@ -44,11 +41,15 @@ void	ft_p_specification(t_printf *args, int *res, char *str)
 void	ft_p_type(va_list parameters, t_printf *args, int *res)
 {
 	long int	n;
+	int			s_len;
 	char		*str;
 
+	s_len = 0;
 	n = (long int)va_arg(parameters, void *);
 	str = ft_itoa_base(n, 16, "0123456789abcdef");
 	if (args->flag == '-')
 		args->width -= 2;
-	ft_p_specification(args, res, str);
+	while (str[s_len] != '\0')
+		s_len++;
+	ft_p_specification(args, res, str, s_len);
 }
