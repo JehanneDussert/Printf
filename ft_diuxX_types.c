@@ -6,7 +6,7 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 10:26:30 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/18 10:17:45 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 10:43:02 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_add_specification(t_printf *args, int *res, char *str)
 	if ((args->precision > s_len && args->width == -1) ||
 			args->precision > args->width)
 		ft_zero(args, str, res, s_len);
-	else if ((args->flag == '0' || args->flag == '+') && args->width > 0)
+	else if ((args->flag == '0' || args->flag == '+') && args->width >= 0)
 		ft_zero_flag(args, str, res, s_len);
 	else if (args->flag == '-')
 	{
