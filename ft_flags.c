@@ -6,7 +6,7 @@
 /*   By: jdussert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 10:23:50 by jdussert          #+#    #+#             */
-/*   Updated: 2019/12/18 10:58:50 by jdussert         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:55:21 by jdussert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	ft_spaces(t_printf *args, char *str, int *res, int s_len)
 	int i;
 
 	i = 0;
+	if (str[0] == '-' && args->width > args->precision 
+			&& args->precision > s_len)
+		args->width -= 1;
 	while (args->width > s_len && args->width > args->precision
 			&& args->precision != 0)
 	{
